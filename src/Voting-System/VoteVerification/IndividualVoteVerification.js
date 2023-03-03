@@ -27,7 +27,7 @@ export default function IndividualVoteVerification() {
             If you wish to see all counted votes, please click{" "}
             <Link
               className="link-bold"
-              onClick={() => navigate("/vote-verification")}
+              onClick={() => navigate("/verification")}
             >
               here
             </Link>
