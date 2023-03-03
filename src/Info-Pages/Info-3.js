@@ -21,7 +21,7 @@ export default function Info3() {
           marginTop={"2rem"}
           width="8rem"
           className="red-btn"
-          onClick={() => window.location.href="https://www.survey-xact.dk/LinkCollector?key=5SVF9X6XL695"}
+          onClick={() => window.location.href="https://www.survey-xact.dk/LinkCollector?key=TC9S9SFFJPC5"}
         >
           Go to survey
         </Button>
