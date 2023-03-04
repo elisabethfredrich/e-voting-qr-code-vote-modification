@@ -1,4 +1,4 @@
-E-Voting Study (System 3)
+# E-Voting Study (System 3)
 
 A voting and vote verification system prototype developed to investigate the manipulation-detection efficacy of tracking code-based verification in e-voting.
 
