@@ -21,11 +21,12 @@ export default function IndividualVoteVerification() {
             correctly, please follow the guidelines in the instruction paper.
           </Text>
         </Box>
+        <Text className="centered-text" mt={"1.5rem"}>Below you can see your counted vote:</Text>
 
         <Box className="individual-vote-display">
           <Text>Sarah Miller (Party J)</Text>
         </Box>
-        <Box>
+        <Box className="bb-code-container">
           <Text>
             If you wish to see all counted votes, please click{" "}
             <Link
