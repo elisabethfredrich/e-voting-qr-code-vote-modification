@@ -2,11 +2,13 @@ import { GridItem, Box, Text, Link } from "@chakra-ui/react";
 import React from "react";
 import "./VoteVerification.css";
 import { Button } from "@chakra-ui/react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
+import getVoter from "../../API/Voter";
 
 export default function IndividualVoteVerification() {
   const navigate = useNavigate();
+  let voter = getVoter(useParams());
 
   return (
     <div>
@@ -14,7 +16,8 @@ export default function IndividualVoteVerification() {
       <div className="outer-page-container">
         <div className="inner-page-container-wide">
           <h1 className="blue-text centered-text">Vote Verification</h1>
-
+          {voter.attributes.Vote==""?<Text className="red-text centered-text">The election results are not available yet.<br/> Please try again later.</Text>
+:<div>
           <Box className="info-box">
             <Text className="info-text">
               <span className="bold-text">NB!</span> If your vote is not counted
@@ -24,8 +27,9 @@ export default function IndividualVoteVerification() {
           <Text mt={"1.5rem"}>Below you can see your counted vote:</Text>
 
           <Box className="individual-vote-display">
-            <Text>Sarah Miller (Party J)</Text>
+              Emma Miller (Party J)
           </Box>
+          
           <Box>
             <Text>
               If you wish to see all counted votes, please click{" "}
@@ -40,20 +44,11 @@ export default function IndividualVoteVerification() {
             <Text>
               There, you can also verify your vote by using the following code:
             </Text>
-          </Box>
           <Text className="verification-code-individual-page">
             bAdJhFVz6aFrJTa-F86I5HTe
           </Text>
+          </Box></div>}
 
-          <GridItem className="btn-container-vertical">
-            <Button
-              className="blue-btn"
-              width={"100%"}
-              onClick={() => navigate("/info-3")}
-            >
-              Close
-            </Button>
-          </GridItem>
         </div>
       </div>
     </div>
