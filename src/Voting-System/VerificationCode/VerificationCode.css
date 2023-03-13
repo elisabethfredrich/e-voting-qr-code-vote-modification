@@ -23,3 +23,9 @@
    width:0px;
   }
 
+  .figcaption-verification-example{
+    text-align: center;
+    font-size: 0.9rem;
+    line-height: 2;
+    color: grey;
+  }
