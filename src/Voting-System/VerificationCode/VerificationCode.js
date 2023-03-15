@@ -66,7 +66,7 @@ export default function VerificationCode() {
               <Text className="text-margin-top">
                 After the election result is published, you need to visit our
                 official webpage and search for your verification code between
-                all the codes. The picture 1 to right illustrates how it will look
+                all the codes. The picture to right illustrates how it will look
                 like with all the verification codes being linked their specific
                 vote.
               </Text>
@@ -74,8 +74,8 @@ export default function VerificationCode() {
               <Text className="text-margin-top">
                 You also have the opportunity to scan a QR code, which will you
                 only show you the vote that has been registered for your QR
-                code. You get your QR code by downloading your code below. The
-                picture 2 to right illustrates how this will look like.
+                code. You get your QR code by downloading your code below. {/* The
+                picture 2 to right illustrates how this will look like. */}
               </Text>
 
               <Text className="text-margin-top">
