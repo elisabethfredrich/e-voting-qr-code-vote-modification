@@ -26,7 +26,6 @@ import PopOverDiagram from "./PopoverDiagram";
 
 export default function VoteVerification() {
   const [input, setInput] = useState("");
-  const navigate = useNavigate();
   const voter = getCurrentUser();
   const errorText =
     "Once all votes are counted, you can verify your vote here. You will get notified as soon as the results are available.";
@@ -95,7 +94,7 @@ export default function VoteVerification() {
   return (
     <div>
       <Navbar />
-      {/* <div className="outer-page-container"> */}
+  
 
       <Grid className="container-outer-page">
     
@@ -117,7 +116,7 @@ export default function VoteVerification() {
     
           </GridItem>
    
-        {/*   <Grid className="verification-content"" */}
+       
 
         <Grid className="verification-content">
        
@@ -221,18 +220,10 @@ export default function VoteVerification() {
                 ))}
               </Accordion>
             )}
-            <Button
-              className="blue-btn"
-              width={"100%"}
-              onClick={() => navigate("/info-3")}
-            >
-              Close
-            </Button>
+
          
         </Grid>
       </Grid>
-      {/* </Grid> */}
     </div>
-    /*  </div> */
   );
 }
