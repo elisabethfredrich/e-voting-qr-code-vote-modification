@@ -46,6 +46,7 @@ export async function getVoter(id){
     let user = await query.get(id);
     console.log(user)
     console.log('User found', user);
+    return user;
   } catch (error) {
     console.error('Error while fetching user', error);
   }

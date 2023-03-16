@@ -119,7 +119,7 @@
 
 .info-banner {
   background-color: var(--primary-orange);
-  width: 27vw;
+  width: 32vw;
   min-height: 32vh;
   margin-right:-28vw;
   max-height: max-content;
@@ -141,7 +141,9 @@
   justify-content: flex-end;
   flex-direction: column;
   color: white;
-  align-content: flex-start;
+  align-items: center;
+  grid-template-columns: 1fr 5fr;
+  gap: 1rem;
 }
 
 
@@ -175,4 +177,14 @@ input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration {
   display: none;
+}
+
+.slideout-trigger{
+  font-size:3rem;
+}
+
+.slideout-trigger:hover{
+  text-decoration: none !important;
+  color: var(--secondary-darkred);
+
 }

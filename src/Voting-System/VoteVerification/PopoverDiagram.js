@@ -15,7 +15,7 @@ import {
     return (
       <Popover>
         <PopoverTrigger>
-        <Link>
+        <Link >
         <img className="result-diagram"src={Result}  alt="result"></img>
         </Link>
         </PopoverTrigger>

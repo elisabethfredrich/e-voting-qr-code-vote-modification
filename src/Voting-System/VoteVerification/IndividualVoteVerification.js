@@ -1,14 +1,37 @@
-import { GridItem, Box, Text, Link } from "@chakra-ui/react";
-import React from "react";
+import { GridItem, Box, Text, Link, Spinner } from "@chakra-ui/react";
+import React, { useEffect, useRef } from "react";
 import "./VoteVerification.css";
 import { Button } from "@chakra-ui/react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useAsyncValue, useNavigate, useParams } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
-import getVoter from "../../API/Voter";
+import { addVoter } from "../../API/Voter";
+import getCurrentUser from "../../API/Voter";
+import { loginVoter } from "../../API/Voter";
+import { useState } from "react";
 
 export default function IndividualVoteVerification() {
   const navigate = useNavigate();
-  let voter = getVoter(useParams());
+  const [voter, setVoter] = useState();
+  const {id} = useParams();
+
+  const isComponentMounted = useRef();
+
+useEffect(() =>{
+  isComponentMounted.current = true;
+return () => {
+  loginVoter(id, id).then(
+    () =>  {
+        let user =  getCurrentUser();
+        if(isComponentMounted.current){
+        setVoter(user);}
+        
+      });
+  isComponentMounted.current = false;
+  console.log(voter);
+};
+},[]);
+
+
 
   return (
     <div>
@@ -16,6 +39,7 @@ export default function IndividualVoteVerification() {
       <div className="outer-page-container">
         <div className="inner-page-container-wide">
           <h1 className="blue-text centered-text">Vote Verification</h1>
+          {!isComponentMounted.current ? <Spinner/>:<div>
           {voter.attributes.Vote==""?<Text className="red-text centered-text">The election results are not available yet.<br/> Please try again later.</Text>
 :<div>
           <Box className="info-box">
@@ -47,7 +71,7 @@ export default function IndividualVoteVerification() {
           <Text className="verification-code-individual-page">
             bAdJhFVz6aFrJTa-F86I5HTe
           </Text>
-          </Box></div>}
+          </Box></div>}</div>}
 
         </div>
       </div>
