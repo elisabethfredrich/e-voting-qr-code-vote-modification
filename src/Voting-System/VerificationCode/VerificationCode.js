@@ -96,7 +96,7 @@ export default function VerificationCode() {
                       download
                     </span>
                   </Text>
-                  {<PDFgenerator voterId={voter.id} />}
+                  {<PDFgenerator voterId={voter.attributes.username} />}
                 </Button>
               </Grid>
               <Checkbox
