@@ -180,20 +180,6 @@
   gap: 1rem;
 }
 
-@media (max-width: 960px) {
-  @keyframes slidein {
-    from {
-      margin-right: -20vw;
-    }
-  
-    to {
-      margin-right:-2vw;
-    }
-  }
-}
-
-@media (min-width: 960px) {
-}
 
 
 
