@@ -8,6 +8,7 @@ import { addVoter } from "../../API/Voter";
 import getCurrentUser from "../../API/Voter";
 import { loginVoter } from "../../API/Voter";
 import { useState } from "react";
+import { slideOutMobile } from "../../utils";
 
 export default function IndividualVoteVerification() {
   const navigate = useNavigate();
@@ -54,7 +55,7 @@ return () => {
               Emma Miller (Party J)
           </Box>
           
-          <Box>
+          <Box marginRight={"2rem"}>
             <Text>
               If you wish to see all counted votes, please click{" "}
               <Link
@@ -71,7 +72,60 @@ return () => {
           <Text className="verification-code-individual-page">
             bAdJhFVz6aFrJTa-F86I5HTe
           </Text>
-          </Box></div>}</div>}
+          </Box>
+          <Grid className="info-banner" id="info-banner">
+                <Link
+                  id="slideout-trigger"
+                  className="slideout-trigger"
+                  onClick={() => slideOutMobile()}
+                >{`>`}</Link>
+                <div className="info-banner-content">
+                  <div id="banner-text">
+                    <Text className="bold-text white-text">
+                      You have finished the second part of the study!
+                    </Text>
+
+                    <Text className="white-text" mt={"1rem"}>
+                      To complete the study, please fill out a survey about your
+                      experience of the online voting system.{" "}
+                    </Text>
+                    <Button
+                      id="survey-button-horizontal"
+                      marginTop={"1rem"}
+                      width="8rem"
+                      className="red-btn"
+                      padding={"1rem"}
+                      onClick={() =>
+                        (window.location.href =
+                          "https://www.survey-xact.dk/LinkCollector?key=TC9S9SFFJPC5")
+                      }
+                    >
+                      Go to survey
+                    </Button>
+                  </div>
+                  <div id="survey-button-vertical-box">
+                    <Button
+                      width={0}
+                      id="survey-button-vertical"
+                      className="red-btn"
+                      transform={"rotate(90deg)"}
+                      marginBottom={0}
+                      marginRight={0}
+                      visibility="hidden"
+                      position={"absolute"}
+                      left={"-19.99"}
+                      onClick={() =>
+                        (window.location.href =
+                          "https://www.survey-xact.dk/LinkCollector?key=TC9S9SFFJPC5")
+                      }
+                    >
+                      Go to survey
+                    </Button>
+                  </div>
+                </div>
+              </Grid>
+          
+          </div>}</div>}
 
         </div>
       </div>

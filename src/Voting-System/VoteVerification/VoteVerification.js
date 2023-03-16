@@ -25,6 +25,8 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import getCurrentUser from "../../API/Voter";
 import PopOverDiagram from "./PopoverDiagram";
+import { slideOut } from "../../utils";
+
 
 export default function VoteVerification() {
   const [input, setInput] = useState("");
@@ -94,21 +96,6 @@ export default function VoteVerification() {
       message.style.display = "block";
     }
   };
-
-  function slideOut() {
-    document.querySelector("#info-banner").style.width = "6rem";
-    document.querySelector("#info-banner").style.marginRight = "0";
-    document.querySelector("#info-banner").style.animationFillMode = "none";
-    document.querySelector("#info-banner").style.alignItems = "flex-start";
-    document.querySelector("#banner-text").style.display = "none";
-    document.querySelector("#survey-button-horizontal").style.visibility =
-      "hidden";
-    document.querySelector("#survey-button-vertical").style.visibility =
-      "visible";
-    document.querySelector("#survey-button-vertical").style.width = "8rem";
-    document.querySelector("#survey-button-vertical").style.width = "8rem";
-    document.querySelector("#slideout-trigger").innerHTML = "";
-  }
 
   return (
     <div>

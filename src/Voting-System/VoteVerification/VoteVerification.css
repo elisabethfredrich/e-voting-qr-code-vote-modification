@@ -98,30 +98,64 @@
   top: 155px;
 }
 
- @keyframes slidein {
-  from {
-    margin-right: -20vw;
+/* Banner */
+
+@media (max-width: 960px) {
+  @keyframes slidein {
+    from {
+      margin-right: -100vw;
+    }
+  
+    to {
+      margin-right:-2vw;
+    }
+  }
+  @keyframes slideout {
+    from {
+      margin-right:-2vw;
+    }
+  
+    to {
+      margin-right:-10vw;
+    }
+  } 
+  .info-banner {
+
+  width: 100vw;
   }
 
-  to {
-    margin-right:-2vw;
-  }
+
 }
-@keyframes slideout {
-  from {
-    margin-right:-2vw;
-  }
 
-  to {
-    margin-right:-10vw;
+@media (min-width: 960px) {
+  @keyframes slidein {
+    from {
+      margin-right: -20vw;
+    }
+  
+    to {
+      margin-right:-2vw;
+    }
   }
-} 
+  @keyframes slideout {
+    from {
+      margin-right:-2vw;
+    }
+  
+    to {
+      margin-right:-10vw;
+    }
+  } 
+  .info-banner {
+
+    width: 32vw;
+    }
+}
 
 .info-banner {
   background-color: var(--primary-orange);
-  width: 32vw;
   min-height: 32vh;
-  margin-right:-28vw;
+  margin-right:-100vw;
   max-height: max-content;
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -146,6 +180,22 @@
   gap: 1rem;
 }
 
+@media (max-width: 960px) {
+  @keyframes slidein {
+    from {
+      margin-right: -20vw;
+    }
+  
+    to {
+      margin-right:-2vw;
+    }
+  }
+}
+
+@media (min-width: 960px) {
+}
+
+
 
 .info-banner-content{
   display:flex;
@@ -159,6 +209,15 @@
   height: 100%;
 }
 
+.slideout-trigger{
+  font-size:3rem;
+}
+
+.slideout-trigger:hover{
+  text-decoration: none !important;
+  color: var(--secondary-darkred);
+
+}
 
 /* clears the ‘X’ from Internet Explorer */
 input[type=search]::-ms-clear {
@@ -179,12 +238,3 @@ input[type="search"]::-webkit-search-results-decoration {
   display: none;
 }
 
-.slideout-trigger{
-  font-size:3rem;
-}
-
-.slideout-trigger:hover{
-  text-decoration: none !important;
-  color: var(--secondary-darkred);
-
-}
