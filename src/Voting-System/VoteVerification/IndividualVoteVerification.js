@@ -1,4 +1,4 @@
-import { GridItem, Box, Text, Link, Spinner } from "@chakra-ui/react";
+import { GridItem, Grid, Box, Text, Link, Spinner } from "@chakra-ui/react";
 import React, { useEffect, useRef } from "react";
 import "./VoteVerification.css";
 import { Button } from "@chakra-ui/react";
