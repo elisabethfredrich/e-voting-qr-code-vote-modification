@@ -80,6 +80,9 @@
   font-size: 1.1rem;
 }
 
+.white-text{
+  color: white;
+}
 /* buttons */
 @media (max-width: 960px) {
   .red-btn{

@@ -12,11 +12,13 @@ import {
   AccordionPanel,
   AccordionIcon,
   AccordionItem,
+  Flex
 } from "@chakra-ui/react";
 import { React, useEffect } from "react";
 import Results from "../../JSON/results.json";
-import "./VoteVerification.css";
 import { SearchIcon } from "@chakra-ui/icons";
+import "./VoteVerification.css";
+import "../../Info-Pages/InfoPages.css";
 import { Button } from "@chakra-ui/react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -90,6 +92,19 @@ export default function VoteVerification() {
       message.style.display = "block";
     }
   };
+
+  function slideOut(){
+    document.querySelector("#info-banner").style.width = "6rem"
+    document.querySelector("#info-banner").style.marginRight = "0"
+    document.querySelector("#info-banner").style.animationFillMode = "none"
+    document.querySelector("#info-banner").style.alignItems = "flex-start"
+    document.querySelector("#banner-text").style.display = "none"
+    document.querySelector("#survey-button-horizontal").style.visibility= "hidden"
+    document.querySelector("#survey-button-vertical").style.visibility= "visible"
+    document.querySelector("#survey-button-vertical").style.width= "8rem"
+    document.querySelector("#survey-button-vertical").style.width= "8rem"
+    document.querySelector("#slideout-trigger").innerHTML= ""
+  }
 
   return (
     <div>
@@ -223,6 +238,48 @@ export default function VoteVerification() {
 
          
         </Grid>
+      <Grid className="info-banner" id="info-banner">
+        <Link id="slideout-trigger" onClick={()=>slideOut()}>{`>`}</Link>
+        <div className="info-banner-content">
+          <div id="banner-text">
+      <Text className="bold-text white-text">
+         You have finished the second part of the study!
+        </Text>
+
+      <Text className="white-text" mt={"1rem"}>
+        To complete the study, please fill out a
+          survey about your experience of the online voting system.        </Text>
+      <Button
+      id="survey-button-horizontal"
+          marginTop={"1rem"}
+          width="8rem"
+          className="red-btn"
+          padding={"1rem"}
+
+          onClick={() => window.location.href="https://www.survey-xact.dk/LinkCollector?key=TC9S9SFFJPC5"}
+        >
+          Go to survey
+        </Button>
+        </div>
+<div id="survey-button-vertical-box">
+      <Button
+     
+      width={0}
+      id="survey-button-vertical"
+          className="red-btn"
+          transform={"rotate(90deg)"}
+          marginBottom={0}
+          marginRight={0}
+          visibility="hidden"
+          position={"absolute"}
+          left={"-19.99"}
+          onClick={() => window.location.href="https://www.survey-xact.dk/LinkCollector?key=TC9S9SFFJPC5"}
+        >
+          Go to survey
+        </Button>
+        </div>
+        </div>
+      </Grid>
       </Grid>
     </div>
   );
