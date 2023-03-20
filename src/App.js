@@ -8,6 +8,7 @@ import Confirmation from "./Voting-System/Confirmation/Confirmation";
 import Voting from "./Voting-System/Voting/Voting";
 import Info2 from "./Info-Pages/Info-2";
 import Info1 from "./Info-Pages/Info-1";
+import Info3 from "./Info-Pages/Info-3";
 import Reporting from "./Voting-System/Reporting/Reporting";
 import Parse from "parse";
 import VerificationCode from "./Voting-System/VerificationCode/VerificationCode"
@@ -41,6 +42,7 @@ function App() {
             <Route path="/voting" element={<Voting />} />
             <Route path="/confirmation" element={<Confirmation />} />
             <Route path="/info-2" element={<Info2 />} />
+            <Route path="/info-3" element={<Info3 />} />
             <Route path="/verification" element={<VoteVerification />} />
             <Route
               path="/verification/:id"
