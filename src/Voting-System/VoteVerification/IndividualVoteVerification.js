@@ -73,7 +73,7 @@ export default function IndividualVoteVerification() {
                       bAdJhFVz6aFrJTa-F86I5HTe
                     </Text>
                   </Box>
-                  <Grid className="info-banner" id="info-banner">
+                 {/*  <Grid className="info-banner" id="info-banner">
                     <Link
                       id="slideout-trigger"
                       className="slideout-trigger"
@@ -123,7 +123,14 @@ export default function IndividualVoteVerification() {
                         </Button>
                       </div>
                     </div>
-                  </Grid>
+                  </Grid> */}
+                    <Button
+                    className="blue-btn"
+                    width={"100%"}
+                    onClick={() => navigate("/info-3")}
+                  >
+                    Finish
+                  </Button>
                 </div>
               )}
             </div>
