@@ -23,7 +23,7 @@ export default function IndividualVoteVerification() {
           setVoter(user);
           console.log(user);
   });
-}},[id]);
+}},[]);
 
   return (
     <div>
