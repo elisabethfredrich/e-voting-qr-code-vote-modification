@@ -37,17 +37,3 @@ export async function saveReportOfProblem(problem) {
     console.log("Error saving report of problem: " + error);
   }
 }
-
-export async function getVoter(id){
-  const User = new Parse.User();
-  const query = new Parse.Query(User);
-
-  try {
-    let user = await query.get(id);
-    console.log(user)
-    console.log('User found', user);
-    return user;
-  } catch (error) {
-    console.error('Error while fetching user', error);
-  }
-}
