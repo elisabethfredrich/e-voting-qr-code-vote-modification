@@ -24,11 +24,13 @@ import Navbar from "../Navbar/Navbar";
 import getCurrentUser from "../../API/Voter";
 import PopOverDiagram from "./PopoverDiagram";
 import { slideOut } from "../../utils";
+import { useNavigate } from "react-router-dom";
 
 
 export default function VoteVerification() {
   const [input, setInput] = useState("");
   const voter = getCurrentUser();
+  const navigate = useNavigate();
 
   let results = Results.votes.sort((a, b) => {
     if (a.code.toUpperCase() < b.code.toUpperCase()) {
