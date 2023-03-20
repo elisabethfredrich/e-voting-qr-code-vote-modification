@@ -15,7 +15,6 @@ export default function IndividualVoteVerification() {
   const { id } = useParams();
 
   useEffect(() =>{
-    return () => {
       loginVoter(id, id).then(
         () =>  {
         console.log("login")
@@ -23,7 +22,7 @@ export default function IndividualVoteVerification() {
           setVoter(user);
           console.log(user);
   });
-}},[]);
+},[]);
 
   return (
     <div>
