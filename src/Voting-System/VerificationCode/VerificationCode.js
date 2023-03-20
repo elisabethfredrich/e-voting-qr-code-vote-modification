@@ -5,9 +5,7 @@ import {
   Checkbox,
   Flex,
   Grid,
-  Image,
-  GridItem,
-  Box,
+  Image
 } from "@chakra-ui/react";
 import "./VerificationCode.css";
 import { useNavigate } from "react-router-dom";
@@ -15,7 +13,6 @@ import getCurrentUser from "../../API/Voter";
 import Navbar from "../Navbar/Navbar";
 import PDFgenerator from "./PDFgenerator";
 import VerificationCodeExample from "../../assets/Example_VerificationCode.png";
-import IndividualBBExampe from "../../assets/IndividualBB_Example.png";
 
 export default function VerificationCode() {
   const navigate = useNavigate();
@@ -48,8 +45,21 @@ export default function VerificationCode() {
     <div>
       <Navbar />
       <div className="outer-page-container">
-        <Grid gridTemplateColumns={"1fr"} gap={"7rem"}>
-          <div className="inner-page-container-wide margin-left margin-right">
+        <Grid className="verification-code-grid">
+        <div className="verification-code-example-picture">
+          <Image
+            className="picture-example-bb"
+            src={VerificationCodeExample}
+            width={"100%"}
+            height={"auto"}
+            border={"solid 1px var(--light_grey)"}
+          />
+          <figcaption className="figcaption-verification-example">
+            The official webpage with all verification codes linked to their
+            vote.
+          </figcaption>
+        </div>
+          <div className="inner-page-container-wide">
             <Flex
               id="generated-verification-code"
               className="generated-verification-code-container"
@@ -70,6 +80,20 @@ export default function VerificationCode() {
                 like with all the verification codes being linked their specific
                 vote.
               </Text>
+
+              <div className="verification-code-example-picture-mobile">
+          <Image
+            className="picture-example-bb"
+            src={VerificationCodeExample}
+            width={"100%"}
+            height={"auto"}
+            border={"solid 1px var(--light_grey)"}
+          />
+          <figcaption className="figcaption-verification-example">
+            The official webpage with all verification codes linked to their
+            vote.
+          </figcaption>
+        </div>
 
               <Text className="text-margin-top">
                 You also have the opportunity to scan a QR code, which will you
@@ -118,31 +142,6 @@ export default function VerificationCode() {
             </Flex>
           </div>
         </Grid>
-
-        <div className="verification-code-example-picture">
-          <Image
-            className="picture-example-bb"
-            src={VerificationCodeExample}
-            width={"100%"}
-            height={"auto"}
-            border={"solid 1px var(--light_grey)"}
-          />
-          <figcaption className="figcaption-verification-example">
-            The official webpage with all verification codes linked to their
-            vote.
-          </figcaption>
-
-   {/*        <Image
-            className="picture-example-bb"
-            src={IndividualBBExampe}
-            width={"100%"}
-            height={"auto"}
-            border={"solid 1px var(--light_grey)"}
-          />
-          <figcaption className="figcaption-verification-example">
-            Picture 2: After scanning your QR-code, you will see your saved voted. 
-          </figcaption> */}
-        </div>
       </div>
     </div>
   );
