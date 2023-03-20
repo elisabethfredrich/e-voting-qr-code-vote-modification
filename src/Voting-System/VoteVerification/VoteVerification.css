@@ -206,8 +206,11 @@
   gap: 1rem;
 }
 
-.info-banner-content {
-  display: flex;
+
+
+
+.info-banner-content{
+  display:flex;
   flex-direction: column;
   align-items: flex-start;
 }
