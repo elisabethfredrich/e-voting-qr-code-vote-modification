@@ -4,7 +4,6 @@ import {
   Input,
   Box,
   Text,
-  Link,
   InputGroup,
   InputLeftElement,
   Accordion,
@@ -22,9 +21,9 @@ import { Button } from "@chakra-ui/react";
 import { useState } from "react";
 import Navbar from "../Navbar/Navbar";
 import getCurrentUser from "../../API/Voter";
-import PopOverDiagram from "./PopoverDiagram";
 import { slideOut } from "../../utils";
 import { useNavigate } from "react-router-dom";
+import Result from "../../assets/Diagram-Result.png";
 
 
 export default function VoteVerification() {
@@ -103,7 +102,7 @@ export default function VoteVerification() {
             <h3 className="headline-results">
               Result of General Election 2023
             </h3>
-            <PopOverDiagram />
+            <img className="result-diagram"src={Result}  alt="result"></img>
           </Box>}
           <h3 className="headline-results">Demo video</h3>
           <iframe
