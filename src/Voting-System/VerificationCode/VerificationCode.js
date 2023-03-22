@@ -61,7 +61,7 @@ export default function VerificationCode() {
           </Text>
 
           <Grid className="verification-code-box centered-text">
-            <h3>bAdJhFVz6aFrJTa-F86I5HTe</h3>
+            <h3>ThisIsADemo4You-Fl41vGbD</h3>
 
             <Button className="blue-btn" width={"15rem"}>
               <Text display={"flex"}>
