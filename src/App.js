@@ -6,16 +6,14 @@ import VoteVerification from "./Voting-System/VoteVerification/VoteVerification"
 import IndividualVoteVerification from "./Voting-System/VoteVerification/IndividualVoteVerification";
 import Confirmation from "./Voting-System/Confirmation/Confirmation";
 import Voting from "./Voting-System/Voting/Voting";
-import Info2 from "./Info-Pages/Info-2";
 import Info1 from "./Info-Pages/Info-1";
+import Info2 from "./Info-Pages/Info-2";
 import Info3 from "./Info-Pages/Info-3";
 import Welcome from "./Voting-System/Welcome/Welcome";
 import Reporting from "./Voting-System/Reporting/Reporting";
 import Parse from "parse";
-import VerificationCode from "./Voting-System/VerificationCode/VerificationCode"
-import Error from "./Voting-System/Error/Error"
-import { useEffect } from "react";
-
+import VerificationCode from "./Voting-System/VerificationCode/VerificationCode";
+import Error from "./Voting-System/Error/Error";
 
 const PARSE_APPLICATION_ID = "MaAoTsKJsRyfyBlSktyLHRBhX5FPAY1lRUaFU4B1";
 const PARSE_HOST_URL = "https://parseapi.back4app.com/";
@@ -26,12 +24,6 @@ Parse.initialize(PARSE_APPLICATION_ID, PARSE_JAVASCRIPT_KEY);
 Parse.serverURL = PARSE_HOST_URL;
 
 function App() {
-
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
     <div className="App">
       <div id="app-main">
@@ -51,9 +43,8 @@ function App() {
               element={<IndividualVoteVerification />}
             />
             <Route path="reporting" element={<Reporting />} />
-            <Route path="/invalid-url" element={<Error/>}/>
+            <Route path="/invalid-url" element={<Error />} />
             <Route path="/*" element={<Navigate to="/invalid-url" />} />
-            
           </Routes>
         </BrowserRouter>
       </div>

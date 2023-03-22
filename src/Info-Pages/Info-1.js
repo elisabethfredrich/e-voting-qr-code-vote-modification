@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./InfoPages.css";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -67,12 +67,12 @@ export default function Info1() {
       .setAttribute("disabled", isSubmitting);
     addVoter(value.pid).then(
       (resolveSignUp) => {
-        navigate("/verification-code");
+        navigate("/welcome");
       },
       (rejectSignUp) => {
         loginVoter(value.pid).then(
           (resolveLogIn) => {
-            navigate("/verification-code");
+            navigate("/welcome");
           },
           (rejectLogIn) => {
             setIsSubmitting(false);
@@ -84,6 +84,10 @@ export default function Info1() {
       }
     );
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="container-info-pages">
@@ -101,9 +105,9 @@ export default function Info1() {
                   </GridItem>
                   <GridItem className="info1-steps-griditem">
                     <Text>
-                    All candidates are fictional and for the purpose of this
-                    study we ask you to vote for{" "}
-                    <span className="bold-text red-text">Sarah Wilson.</span>
+                      All candidates are fictional and for the purpose of this
+                      study we ask you to vote for{" "}
+                      <span className="bold-text red-text">Sarah Wilson.</span>
                     </Text>
                     <Checkbox
                       className="check-box check-box-red"

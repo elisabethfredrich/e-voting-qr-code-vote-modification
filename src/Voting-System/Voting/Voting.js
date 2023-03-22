@@ -11,44 +11,45 @@ export default function Voting() {
   const [vote, setVote] = useState("blank");
 
   const location = useLocation();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
 
   return (
     <div>
-    <Navbar/>
-    <div className="outer-page-container">
-      <div className="inner-page-container-wide">
-        <div className="header">
-          <h1 className="blue-text">Voting</h1>
-          <Text>
-            In order to vote in the General Election, please select a candidate
-            below and click "Submit vote".
-          </Text>
+      <Navbar />
+      <div className="outer-page-container">
+        <div className="inner-page-container-wide">
+          <div className="header">
+            <h1 className="blue-text">Voting</h1>
+            <Text>
+              In order to vote in the General Election, please select a
+              candidate below and click "Submit vote".
+            </Text>
+          </div>
+
+          <RadioGroup onChange={setVote} value={vote} className="radio-group">
+            <Grid className="voting-options">
+              {Candidates.map((candidate) => (
+                <Box key={candidate.id}>
+                  <GridItem className="voting-option">
+                    <Radio
+                      className="radio candidate-party-wrapper"
+                      value={`${candidate.candidate} (${candidate.party})`}
+                    >
+                      <div>{candidate.candidate}</div>
+                      <div>{candidate.party}</div>
+                    </Radio>
+                  </GridItem>
+                </Box>
+              ))}
+            </Grid>
+          </RadioGroup>
+
+          <PopOver vote={vote}></PopOver>
         </div>
-
-        <RadioGroup onChange={setVote} value={vote} className="radio-group">
-          <Grid className="voting-options">
-            {Candidates.map((candidate) => (
-              <Box key={candidate.id}>
-                <GridItem className="voting-option">
-                  <Radio
-                    className="radio candidate-party-wrapper"
-                    value={`${candidate.candidate} (${candidate.party})`}
-                  >
-                    <div>{candidate.candidate}</div>
-                    <div>{candidate.party}</div>
-                  </Radio>
-                </GridItem>
-              </Box>
-            ))}
-          </Grid>
-        </RadioGroup>
-
-        <PopOver vote={vote}></PopOver>
       </div>
-    </div>
     </div>
   );
 }
