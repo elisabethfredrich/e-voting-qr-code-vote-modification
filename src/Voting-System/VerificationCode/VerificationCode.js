@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
-import { Button, Text, Checkbox, Flex, Grid, Image } from "@chakra-ui/react";
+import { Button, Text, Checkbox, Grid } from "@chakra-ui/react";
 import "./VerificationCode.css";
 import { useNavigate } from "react-router-dom";
 import getCurrentUser from "../../API/Voter";
 import Navbar from "../Navbar/Navbar";
 import PDFgenerator from "./PDFgenerator";
-import VerificationCodeExample from "../../assets/Example_VerificationCode.png";
 
 export default function VerificationCode() {
   const navigate = useNavigate();

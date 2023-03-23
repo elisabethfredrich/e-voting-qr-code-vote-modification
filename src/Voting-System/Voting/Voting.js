@@ -4,7 +4,6 @@ import Candidates from "../../JSON/candidates.json";
 import PopOver from "./PopOver";
 import { useState, useEffect } from "react";
 import React from "react";
-import { useLocation } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 
 export default function Voting() {
