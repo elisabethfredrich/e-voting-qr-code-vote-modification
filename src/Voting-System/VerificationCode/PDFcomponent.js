@@ -101,9 +101,7 @@ const styles = StyleSheet.create({
 
 // Create Document Component
 export default function PDFcomponent({ dataURL }) {
-  useEffect(() => {
-    console.log(dataURL);
-  }, [dataURL]);
+
 
   return (
     <Document>
@@ -157,7 +155,7 @@ export default function PDFcomponent({ dataURL }) {
             https://e-voting-study-3.netlify.app/verification
           </Link>{" "}
           <Text style={styles.text}>
-            There you can search for your unique alphanumeric verification code:
+            There you can search for your unique alphanumerical verification code:
           </Text>
           <Text style={styles.codeText}>bAdJhFVz6aFrJTa-F86I5HTe</Text>
           <Text style={styles.text}>
