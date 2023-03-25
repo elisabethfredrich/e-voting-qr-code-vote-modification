@@ -101,9 +101,8 @@ const styles = StyleSheet.create({
 
 // Create Document Component
 export default function PDFcomponent({ dataURL }) {
-  useEffect(() => {
-    console.log(dataURL);
-  }, []);
+
+
   return (
     <Document>
       <Page size="A4" style={styles.page}>
@@ -124,10 +123,10 @@ export default function PDFcomponent({ dataURL }) {
           <Text style={styles.subtTitle}>Why should I verify my vote?</Text>
           <Text style={styles.text}>
             To ensure the correctness of the voting result in this online
-            election, it is important that you verify your vote. Possible manipulations can only
-            be detected if as many voters as possible verify
-            their vote and report problems. It will take you less than two
-            minutes and is completely anonymous.
+            election, it is important that you verify your vote. Possible
+            manipulations can only be detected if as many voters as possible
+            verify their vote and report problems. It will take you less than
+            two minutes and is completely anonymous.
           </Text>
           <Text style={styles.text}>
             You have two options to verify your vote:
@@ -153,10 +152,10 @@ export default function PDFcomponent({ dataURL }) {
             src="https://e-voting-study-3.netlify.app/verification"
             style={styles.link}
           >
-            https://e-voting-study-4.netlify.app/verification
+            https://e-voting-study-3.netlify.app/verification
           </Link>{" "}
           <Text style={styles.text}>
-            There you can search for your unique alphanumeric verification code:
+            There you can search for your unique alphanumerical verification code:
           </Text>
           <Text style={styles.codeText}>bAdJhFVz6aFrJTa-F86I5HTe</Text>
           <Text style={styles.text}>

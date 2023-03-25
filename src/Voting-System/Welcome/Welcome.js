@@ -34,21 +34,6 @@ export default function Welcome() {
             online election is a bit different from a paper-based election.
           </Text>
 
-          {/*  <Text className="text-margin-top">
-            <span className="bold-text">Vote Verification</span><br/>
-            In order to ensure the correctness of the result of this
-            online election, it is important that you verify your vote later in
-            the process. For this purpose, you will need a unique verification code that
-            will be linked to your vote.
-          </Text>
-
-          <Text className="text-margin-top">
-            After the election result is published, please visit our
-            official website and search for your verification code among all
-            the codes. The picture to the right illustrates how it will look like
-            with all the verification codes being linked to one vote.
-          </Text> */}
-
           <div>
             <h3 className="headline-results">Demo video</h3>
             <iframe
@@ -56,7 +41,7 @@ export default function Welcome() {
               allow="fullscreen"
               width="520"
               height="300"
-              src="https://www.youtube.com/embed/pV51zCm4NL4"
+              src="https://www.youtube.com/watch?v=Bb33hgxy1So"
             ></iframe>
           </div>
           <Button

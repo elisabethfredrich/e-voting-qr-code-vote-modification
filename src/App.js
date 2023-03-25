@@ -14,6 +14,8 @@ import Reporting from "./Voting-System/Reporting/Reporting";
 import Parse from "parse";
 import VerificationCode from "./Voting-System/VerificationCode/VerificationCode";
 import Error from "./Voting-System/Error/Error";
+import { getNumberOfVoters } from "./API/Voter";
+import { useEffect } from "react";
 
 const PARSE_APPLICATION_ID = "MaAoTsKJsRyfyBlSktyLHRBhX5FPAY1lRUaFU4B1";
 const PARSE_HOST_URL = "https://parseapi.back4app.com/";
@@ -24,6 +26,13 @@ Parse.initialize(PARSE_APPLICATION_ID, PARSE_JAVASCRIPT_KEY);
 Parse.serverURL = PARSE_HOST_URL;
 
 function App() {
+
+    useEffect(()=>{
+      if(getNumberOfVoters()===30){
+        window.location.href = "https://e-voting-study-4.netlify.app/info-1";
+      }
+    },[])
+
   return (
     <div className="App">
       <div id="app-main">

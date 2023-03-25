@@ -1,4 +1,4 @@
-import { Box, Text, Link, Spinner, Grid } from "@chakra-ui/react";
+import { Box, Text, Link, Spinner } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import "./VoteVerification.css";
 import { Button } from "@chakra-ui/react";
@@ -7,22 +7,18 @@ import Navbar from "../Navbar/Navbar";
 import getCurrentUser from "../../API/Voter";
 import { loginVoter } from "../../API/Voter";
 import { useState } from "react";
-import { slideOutMobile } from "../../utils";
 
 export default function IndividualVoteVerification() {
   const navigate = useNavigate();
   const [voter, setVoter] = useState(null);
   const { id } = useParams();
 
-  useEffect(() =>{
-      loginVoter(id, id).then(
-        () =>  {
-        console.log("login")
-          let user =  getCurrentUser();
-          setVoter(user);
-          console.log(user);
-  });
-},[]);
+  useEffect(() => {
+    loginVoter(id, id).then(() => {
+      let user = getCurrentUser();
+      setVoter(user);
+    });
+  }, [id]);
 
   return (
     <div>
@@ -45,7 +41,7 @@ export default function IndividualVoteVerification() {
                     <Text className="info-text">
                       <span className="bold-text">NB!</span> If your vote is not
                       saved correctly, please follow the guidelines in the
-                      instruction paper.
+                      instruction letter and report the issue.
                     </Text>
                   </Box>
                   <Text mt={"1.5rem"}>Below you can see your saved vote:</Text>
@@ -73,58 +69,7 @@ export default function IndividualVoteVerification() {
                       bAdJhFVz6aFrJTa-F86I5HTe
                     </Text>
                   </Box>
-                 {/*  <Grid className="info-banner" id="info-banner">
-                    <Link
-                      id="slideout-trigger"
-                      className="slideout-trigger"
-                      onClick={() => slideOutMobile()}
-                    >{`>`}</Link>
-                    <div className="info-banner-content">
-                      <div id="banner-text">
-                        <Text className="bold-text white-text">
-                          You have finished the second part of the study!
-                        </Text>
-
-                        <Text className="white-text" mt={"1rem"}>
-                          To complete the study, please fill out a survey about
-                          your experience of the online voting system.{" "}
-                        </Text>
-                        <Button
-                          id="survey-button-horizontal"
-                          marginTop={"1rem"}
-                          width="8rem"
-                          className="red-btn"
-                          padding={"1rem"}
-                          onClick={() =>
-                            (window.location.href =
-                              "https://www.survey-xact.dk/LinkCollector?key=TC9S9SFFJPC5")
-                          }
-                        >
-                          Go to survey
-                        </Button>
-                      </div>
-                      <div id="survey-button-vertical-box">
-                        <Button
-                          width={0}
-                          id="survey-button-vertical"
-                          className="red-btn"
-                          transform={"rotate(90deg)"}
-                          marginBottom={0}
-                          marginRight={0}
-                          visibility="hidden"
-                          position={"absolute"}
-                          left={"-19.99"}
-                          onClick={() =>
-                            (window.location.href =
-                              "https://www.survey-xact.dk/LinkCollector?key=TC9S9SFFJPC5")
-                          }
-                        >
-                          Go to survey
-                        </Button>
-                      </div>
-                    </div>
-                  </Grid> */}
-                    <Button
+                  <Button
                     className="blue-btn"
                     width={"100%"}
                     onClick={() => navigate("/info-3")}
