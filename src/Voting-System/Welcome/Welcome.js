@@ -21,8 +21,10 @@ export default function Welcome() {
           <Text>Welcome to the General Election 2023!</Text>
           <Text className="text-margin-top" marginBottom={"2rem"}>
             This election consists of three parts. First, you will get a unique
-            verification code, then you will vote. Later on you can use your verification code to verify your
-            vote, i.e. check whether your vote has been counted correctly. This is important to ensure the correctness of the election result.
+            verification code, then you will vote. Later on you can use your
+            verification code to verify your vote, i.e. check whether your vote
+            has been counted correctly. This is important to ensure the
+            correctness of the election result.
           </Text>
 
           <div>
@@ -37,11 +39,13 @@ export default function Welcome() {
           <div>
             <h3 className="headline-results">Demo video</h3>
             <iframe
-              title="demo-video"
-              allow="fullscreen"
-              width="520"
-              height="300"
-              src="https://www.youtube.com/watch?v=Bb33hgxy1So"
+              width="100%"
+              height="315"
+              src="https://www.youtube.com/embed/Bb33hgxy1So"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
             ></iframe>
           </div>
           <Button
