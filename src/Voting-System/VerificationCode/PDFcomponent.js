@@ -153,12 +153,13 @@ export default function PDFcomponent({ dataURL }) {
             src="https://e-voting-study-3.netlify.app/verification"
             style={styles.link}
           >
-            https://e-voting-study-4.netlify.app/verification
+           {/*  https://e-voting-study-4.netlify.app/verification */}
+           localhost:3000/verification
           </Link>{" "}
           <Text style={styles.text}>
             There you can search for your unique alphanumeric verification code:
           </Text>
-          <Text style={styles.codeText}>bAdJhFVz6aFrJTa-F86I5HTe</Text>
+          <Text style={styles.codeText}>ThisIsADemo4You-Fl41vGbD</Text>
           <Text style={styles.text}>
             Please check that the voting option next to your verification code
             in the table matches your selection.
