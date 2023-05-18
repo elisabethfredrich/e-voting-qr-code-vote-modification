@@ -14,8 +14,6 @@ import Reporting from "./Voting-System/Reporting/Reporting";
 import Parse from "parse";
 import VerificationCode from "./Voting-System/VerificationCode/VerificationCode";
 import Error from "./Voting-System/Error/Error";
-import { getNumberOfVoters } from "./API/Voter";
-import { useEffect } from "react";
 
 const PARSE_APPLICATION_ID = "MaAoTsKJsRyfyBlSktyLHRBhX5FPAY1lRUaFU4B1";
 const PARSE_HOST_URL = "https://parseapi.back4app.com/";
